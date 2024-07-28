@@ -2,6 +2,7 @@
 using Tasks.Model;
 using Tasks.Enum;
 
+// Criando classe TaskInputHandler para retirar a responsabilidade do program.cs de precisar criar e editar as operacoes.
 public class TaskInputHandler
 {
     public MyTask CreateTask(int nextId)

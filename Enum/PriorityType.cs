@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Tasks.Enum
 {
+    //Criando um enum para trabalhar de forma mais facil com a propriedade Priority
     public enum PriorityType
     {
         Normal,

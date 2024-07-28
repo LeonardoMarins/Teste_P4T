@@ -1,6 +1,7 @@
 ﻿using System;
 using Tasks.Services;
 
+// Criando classe MenuHandler para retirar a responsabilidade do program.cs de precisar criar o menu e as operacoes.
 public class MenuHandler
 {
     private readonly TaskService _taskService;
