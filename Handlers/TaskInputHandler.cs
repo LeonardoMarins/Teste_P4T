@@ -10,15 +10,19 @@ public class TaskInputHandler
         {
             Console.WriteLine("Qual o título da tarefa:");
             var title = Console.ReadLine();
+
             Console.WriteLine("Qual a descrição da tarefa:");
             var description = Console.ReadLine();
+
             Console.WriteLine("Qual a data de vencimento da tarefa (dd/MM/yyyy):");
             var dueDateInput = Console.ReadLine();
             var dueDate = DateTime.Parse(dueDateInput);
+
             Console.WriteLine("Qual a prioridade da tarefa:");
             var priorityInput = Console.ReadLine();
+            Enum.TryParse<PriorityType>(priorityInput, out var priorityType);
 
-            if (Enum.TryParse<PriorityType>(priorityInput, out var priorityType))
+            if (Enum.IsDefined(typeof(PriorityType), priorityType))
             {
                 var task = new MyTask
                 {
@@ -28,8 +32,10 @@ public class TaskInputHandler
                     DueDate = dueDate,
                     Priority = priorityType
                 };
-
                 return task;
+            }else
+            {
+                Console.WriteLine("o tipo da prioridade vai de 0 até 2 onde 0 = Normal, 1 = Mediana, 2 = Urgente");
             }
         }catch(FormatException ex)
         {
@@ -50,24 +56,29 @@ public class TaskInputHandler
         {
             Console.WriteLine("Qual o título da tarefa:");
             var title = Console.ReadLine();
+
             Console.WriteLine("Qual a descrição da tarefa:");
             var description = Console.ReadLine();
-            Console.WriteLine("Qual a data de vencimento da tarefa (yyyy-MM-dd):");
+
+            Console.WriteLine("Qual a data de vencimento da tarefa (dd/MM/yyyy):");
             var dueDateInput = Console.ReadLine();
-            DateTime.TryParse(dueDateInput, out var dueDate);
+            var dueDate = DateTime.Parse(dueDateInput);
+
             Console.WriteLine("Qual a prioridade da tarefa:");
             var priorityInput = Console.ReadLine();
+            Enum.TryParse<PriorityType>(priorityInput, out var priorityType);
 
-            if (Enum.TryParse<PriorityType>(priorityInput, out var priorityType))
+            if (Enum.IsDefined(typeof(PriorityType), priorityType))
             {
                 task.Title = title;
                 task.Description = description;
                 task.DueDate = dueDate;
                 task.Priority = priorityType;
+                Console.WriteLine("Tarefa atualizada com sucesso");
             }
             else
             {
-                Console.WriteLine("Dados inválidos. Tarefa não atualizada.");
+                Console.WriteLine("o tipo da prioridade vai de 0 até 2 onde 0 = Normal, 1 = Mediana, 2 = Urgente");
             }
         }
         catch (FormatException ex)

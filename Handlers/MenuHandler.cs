@@ -11,7 +11,7 @@ public class MenuHandler
     {
         _taskService = taskService;
         _taskInputHandler = new TaskInputHandler();
-        _nextId = 0;
+        _nextId = 1;
     }
 
     public void DisplayMenu()
@@ -39,12 +39,30 @@ public class MenuHandler
                     Console.WriteLine("Tarefas Salvas:");
                     DisplayTasks();
                     Console.WriteLine("\n");
-                    Console.WriteLine("Qual tarefa você quer excluir? Digite o título da tarefa:");
-                    var titleToRemove = Console.ReadLine();
-                    if (!string.IsNullOrWhiteSpace(titleToRemove))
+                    Console.WriteLine("Qual tarefa você quer excluir? Digite o ID da tarefa:");
+
+                    Int32.TryParse(Console.ReadLine(), out var idRemove);
+                    var itemsToRemove = new List<int>();
+
+                    foreach (var item in _taskService.GetAllTasks())
                     {
-                        _taskService.RemoveTask(titleToRemove);
+                        if (item.Id == idRemove)
+                        {
+                            itemsToRemove.Add(item.Id);
+                        }
                     }
+
+                    foreach (var id in itemsToRemove)
+                    {
+                        _taskService.RemoveTask(id);
+                        Console.WriteLine("Tarefa Excluida com sucesso");
+                    }
+                    
+                    if(itemsToRemove.Count == 0)
+                    {
+                        Console.WriteLine("ID não é valido");
+                    }
+
                     Console.WriteLine("Aperte a tecla ENTER para voltar ao menu");
                     Console.ReadLine();
                     Console.Clear();
@@ -112,7 +130,7 @@ public class MenuHandler
         var tasks = _taskService.GetAllTasks();
         foreach (var task in tasks)
         {
-            Console.Write(task.Id + " Titulo: " + task.Title + " Descricao: " + task.Description + " Data de vencimento: " + task.DueDate + " Prioridade: " + task.Priority + "\n");
+            Console.Write(" ID: " + task.Id + " Titulo: " + task.Title + " Descricao: " + task.Description + " Data de vencimento: " + task.DueDate + " Prioridade: " + task.Priority + "\n");
         }
     }
 }

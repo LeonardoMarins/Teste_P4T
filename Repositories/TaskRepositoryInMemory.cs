@@ -15,9 +15,9 @@ namespace Tasks.Repositories
             return Model;
         }
 
-        public void RemoveTask(string title)
+        public void RemoveTask(int id)
         {
-            var existTask = Model.First(x => x.Title == title);
+            var existTask = Model.First(x => x.Id == id);
 
             Model.Remove(existTask); 
         }

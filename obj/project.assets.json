@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Rocketseat\\C#\\Tasks\\Tasks.csproj",
+      "projectUniqueName": "C:\\Teste_P4T\\Tasks.csproj",
       "projectName": "Tasks",
-      "projectPath": "C:\\Rocketseat\\C#\\Tasks\\Tasks.csproj",
+      "projectPath": "C:\\Teste_P4T\\Tasks.csproj",
       "packagesPath": "C:\\Users\\marin\\.nuget\\packages\\",
-      "outputPath": "C:\\Rocketseat\\C#\\Tasks\\obj\\",
+      "outputPath": "C:\\Teste_P4T\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

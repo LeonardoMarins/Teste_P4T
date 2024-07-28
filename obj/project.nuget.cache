@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "xGilOk+AI/Z+uqEjUu/5HYh76g9nbuq7b4xyyrR+o7Hu2MIaWn9Ku+EAGMOHr/uh0BNrNjty1FB+D06dmVXZKg==",
+  "dgSpecHash": "DewZ/va5cYDQzu2+zREH8F737Eb/wJ2SUH15wFblPfY3aD0/JJhzwMM45Qcn8xxu3YVP6dRkYOuLk5BOddJ6bg==",
   "success": true,
-  "projectFilePath": "C:\\Rocketseat\\C#\\Tasks\\Tasks.csproj",
+  "projectFilePath": "C:\\Teste_P4T\\Tasks.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
