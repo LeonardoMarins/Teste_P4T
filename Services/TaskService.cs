@@ -18,9 +18,9 @@ namespace Tasks.Services
             _taskRepository.AddTask(task);
         }
 
-        public void RemoveTask(Guid taskId)
+        public void RemoveTask(string title)
         {
-            _taskRepository.RemoveTask(taskId);
+            _taskRepository.RemoveTask(title);
         }
 
         public void UpdateTask(MyTask task)

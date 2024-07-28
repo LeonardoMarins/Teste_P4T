@@ -15,16 +15,16 @@ namespace Tasks.Repositories
             return Model;
         }
 
-        public void RemoveTask(Guid id)
+        public void RemoveTask(string title)
         {
-            var existTask = Model.First(x => x.Id == id);
+            var existTask = Model.First(x => x.Title == title);
 
             Model.Remove(existTask); 
         }
 
         public void UpdateTask(MyTask task)
         {
-            var existTask = Model.First(x => x.Id == task.Id);   
+            var existTask = Model.First(x => x.Id == task.Id);
 
             if(existTask != null) 
             {
