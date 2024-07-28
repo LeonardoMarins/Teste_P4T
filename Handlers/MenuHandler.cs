@@ -112,7 +112,7 @@ public class MenuHandler
         var tasks = _taskService.GetAllTasks();
         foreach (var task in tasks)
         {
-            Console.WriteLine(task.Id + " - " + task.Title);
+            Console.Write(task.Id + " Titulo: " + task.Title + " Descricao: " + task.Description + " Data de vencimento: " + task.DueDate + " Prioridade: " + task.Priority + "\n");
         }
     }
 }
